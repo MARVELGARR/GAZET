@@ -1,18 +1,29 @@
+'use client'
 import { Button } from "@/components/ui/button"
 import Image from "next/image";
 import type { ToolsItemProps } from "@/interfaces/interface";
 
-const ToolsItem: React.FC<ToolsItemProps> = ({name, icon}) => {
+const ToolsItem: React.FC<ToolsItemProps> = ({name, index}) => {
     return (
-        <Button className='flex items-center'>
-            <Image
-                src={icon}
-                alt='logo'
-                height={120}
-                width={120}
-                className=""
-            />
-            <span>Tools</span>
+        <Button  variant={"Navlink"} className='flex fill-violet-600  hover:fill-white items-center rounded-xl justify-between w-full px-[2.5rem] py-[1.7rem]'>
+            {
+                index ==0 && (
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.87999 12.07C7.87999 11.66 8.21999 11.32 8.62999 11.32H14.11V2.86C14.1 2.38 13.72 2 13.24 2C7.34999 2 3.23999 6.11 3.23999 12C3.23999 17.89 7.34999 22 13.24 22C13.71 22 14.1 21.62 14.1 21.14V12.81H8.62999C8.20999 12.82 7.87999 12.48 7.87999 12.07Z" fill=""/>
+                        <path d="M20.54 11.5399L17.7 8.68991C17.41 8.39991 16.93 8.39991 16.64 8.68991C16.35 8.97991 16.35 9.45991 16.64 9.74991L18.2 11.3099H14.1V12.8099H18.19L16.63 14.3699C16.34 14.6599 16.34 15.1399 16.63 15.4299C16.78 15.5799 16.97 15.6499 17.16 15.6499C17.35 15.6499 17.54 15.5799 17.69 15.4299L20.53 12.5799C20.83 12.2999 20.83 11.8299 20.54 11.5399Z" fill=""/>
+                    </svg>
+
+                )
+            }
+            {
+                index ==1 && (
+                    <svg className=' ' width="20" height="20" viewBox="0 0 20 20" fill="" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M16.94 3.41994L11.77 0.429941C10.78 -0.140059 9.23002 -0.140059 8.24002 0.429941L3.02002 3.43994C0.950017 4.83994 0.830017 5.04994 0.830017 7.27994V12.7099C0.830017 14.9399 0.950017 15.1599 3.06002 16.5799L8.23002 19.5699C8.73002 19.8599 9.37002 19.9999 10 19.9999C10.63 19.9999 11.27 19.8599 11.76 19.5699L16.98 16.5599C19.05 15.1599 19.17 14.9499 19.17 12.7199V7.27994C19.17 5.04994 19.05 4.83994 16.94 3.41994ZM10 13.2499C8.21002 13.2499 6.75002 11.7899 6.75002 9.99994C6.75002 8.20994 8.21002 6.74994 10 6.74994C11.79 6.74994 13.25 8.20994 13.25 9.99994C13.25 11.7899 11.79 13.2499 10 13.2499Z" fill=""/>
+                    </svg>
+
+                )
+            }
+            <span className=" ">{name}</span>
         </Button>
     );
 }
