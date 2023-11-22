@@ -7,11 +7,6 @@ export const desktopNavData = [
         images:"/svg/home.svg"
     },
     {
-        name: 'charts',
-        href: '/charts',
-        images:"/svg/chart.svg"
-    },
-    {
         name: 'client',
         href: '/client',
         images:"/svg/client.svg"
@@ -22,13 +17,18 @@ export const desktopNavData = [
         images:"/svg/invoice.svg"
     },
     {
+        name: 'charts',
+        href: '/charts',
+        images:"/svg/chart.svg"
+    },
+    {
         name: 'payment',
         href: '/payment',
         images:"/svg/payment.svg"
     },
     {
         name: 'report',
-        href: '/report',
+        href: '/reports',
         images:"/svg/report.svg"
     }
 ]
@@ -40,6 +40,6 @@ export const tools = [
     },
     {
         name: 'setting',
-        icon: '/svg/setting.svg'
+        icon: '/svg/settings.svg'
     }
 ]
