@@ -43,3 +43,26 @@ export const tools = [
         icon: '/svg/setting.svg'
     }
 ]
+
+export const slider = [
+    {
+        desc: "Your  business imagination is our piority",
+        name:"Ifeoluwapo Ruth",
+        role:"Product Designer - Payment, Gazet",
+    },
+    {
+        desc: "Your  business imagination is our piority",
+        name:"Ifeoluwapo Ruth",
+        role:"Product Designer - Payment, Gazet",
+    },
+    {
+        desc: "Your  business imagination is our piority",
+        name:"Ifeoluwapo Ruth",
+        role:"Product Designer - Payment, Gazet",
+    },
+    {
+        desc: "Your  business imagination is our piority",
+        name:"Ifeoluwapo Ruth",
+        role:"Product Designer - Payment, Gazet",
+    }
+]
