@@ -22,7 +22,6 @@ export default function RootLayout({
 
         <body className={inter.className}>
           <div className="h-full w-full bg-gray-200 flex items-center">
-
             <DesktopSidebar/>
             {children}
           </div>
