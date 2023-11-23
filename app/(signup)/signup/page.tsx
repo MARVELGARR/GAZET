@@ -33,79 +33,79 @@ const Forms = () => {
 
 
   return (
-    <div>
-<Form {...form}>
-  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-    <FormField
-    control={form.control} 
-    name="username"
-    render={(field) => (
-      <FormItem>
-      <FormLabel>Username</FormLabel>
-      <FormControl>
-        <Input {...field} type='text' className="w-full rounded border-gray-700" />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-    />
-        <FormField
-    control={form.control} 
-    name="businessName"
-    render={(field) => (
-      <FormItem>
-      <FormLabel>Business Name</FormLabel>
-      <FormControl>
-        <Input {...field} type='text' className="w-full rounded border-gray-700" />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-    />
-        <FormField
-    control={form.control} 
-    name="email"
-    render={(field) => (
-      <FormItem>
-      <FormLabel>Email</FormLabel>
-      <FormControl>
-        <Input {...field} type='email' className="w-full rounded border-gray-700" />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-    />
-        <FormField
-    control={form.control} 
-    name="password"
-    render={(field) => (
-      <FormItem>
-      <FormLabel>Password</FormLabel>
-      <FormControl>
-        <Input {...field} type='password' className="w-full rounded border-gray-700" />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-    />
-        <FormField
-    control={form.control} 
-    name="confirmPassword"
-    render={(field) => (
-      <FormItem>
-      <FormLabel>Confirm Password</FormLabel>
-      <FormControl>
-        <Input {...field} type='password' className="w-full rounded border-gray-700" />
-      </FormControl>
-      <FormMessage />
-    </FormItem>
-  )}
-    />
-    <Button type="submit" className="bg-[#7433FF] w-full text-white rounded-3xl hover:bg-[#7433FF]">
-            Sign Up
-          </Button>
-  </form>
-</Form>
+    <div className=''>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+          <FormField
+          control={form.control} 
+          name="username"
+          render={(field) => (
+            <FormItem>
+            <FormLabel>Username</FormLabel>
+            <FormControl>
+              <Input {...field} type='text' className="w-full rounded border-gray-700" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+          />
+              <FormField
+          control={form.control} 
+          name="businessName"
+          render={(field) => (
+            <FormItem>
+            <FormLabel>Business Name</FormLabel>
+            <FormControl>
+              <Input {...field} type='text' className="w-full rounded border-gray-700" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+          />
+              <FormField
+          control={form.control} 
+          name="email"
+          render={(field) => (
+            <FormItem>
+            <FormLabel>Email</FormLabel>
+            <FormControl>
+              <Input {...field} type='email' className="w-full rounded border-gray-700" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+          />
+              <FormField
+          control={form.control} 
+          name="password"
+          render={(field) => (
+            <FormItem>
+            <FormLabel>Password</FormLabel>
+            <FormControl>
+              <Input {...field} type='password' className="w-full rounded border-gray-700" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+          />
+              <FormField
+          control={form.control} 
+          name="confirmPassword"
+          render={(field) => (
+            <FormItem>
+            <FormLabel>Confirm Password</FormLabel>
+            <FormControl>
+              <Input {...field} type='password' className="w-full rounded border-gray-700" />
+            </FormControl>
+            <FormMessage />
+          </FormItem>
+        )}
+          />
+          <Button type="submit" className="bg-[#7433FF] w-full text-white rounded-3xl hover:bg-[#7433FF]">
+                  Sign Up
+                </Button>
+        </form>
+      </Form>
     </div>
   )
 };
