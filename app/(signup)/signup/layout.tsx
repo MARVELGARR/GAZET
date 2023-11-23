@@ -21,7 +21,7 @@ export default function RootLayout({
       <ReduxProvider>
 
         <body className={inter.className}>
-          <div className="h-full w-full bg-gray-200 flex items-center">
+          <div className="h-screen w-full bg-gray-200 flex justify-center items-center">
             {children}
           </div>
         </body>
