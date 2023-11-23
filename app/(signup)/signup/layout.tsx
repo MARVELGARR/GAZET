@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
-import DesktopSidebar from '@/components/MarvelComponents/sideBarComponents/desktopSidebar'
 import ReduxProvider from '@/redux/redux-provider/Provider'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,8 +22,6 @@ export default function RootLayout({
 
         <body className={inter.className}>
           <div className="h-full w-full bg-gray-200 flex items-center">
-
-            <DesktopSidebar/>
             {children}
           </div>
         </body>
