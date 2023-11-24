@@ -20,8 +20,8 @@ export default function RootLayout({
     <html lang="en">
       <ReduxProvider>
 
-        <body className={inter.className}>
-          <div className="h-full w-full bg-gray-200 flex items-center">
+        <body className={`w-full h-full${inter.className} justify-center  flex  items-center `}>
+          <div className="h-full w-full max-w-[64rem] gap-6 bg-gray-200 justify-center px-10 pt-5  flex  items-center">
             <DesktopSidebar/>
             {children}
           </div>
