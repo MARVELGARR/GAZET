@@ -25,3 +25,14 @@ export interface SearchProps{
         type:string;
     }[]
 }
+export interface Client{
+    title: string,
+    firstname: string,
+    othernames: string,
+    companyname: string,
+    clientemail: string,
+    phone:string,
+    address: string,
+    currency: string,
+    type:string;
+}

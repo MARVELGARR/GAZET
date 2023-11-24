@@ -21,7 +21,7 @@ export default function RootLayout({
       <ReduxProvider>
 
         <body className={`w-full h-full${inter.className} justify-center  flex  items-center `}>
-          <div className="h-full w-full max-w-[64rem] bg-gray-200 justify-center px-10 pt-5  flex  items-center">
+          <div className="h-full w-full max-w-[64rem] gap-6 bg-gray-200 justify-center px-10 pt-5  flex  items-center">
             <DesktopSidebar/>
             {children}
           </div>
