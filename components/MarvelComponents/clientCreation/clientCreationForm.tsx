@@ -16,6 +16,9 @@ import {
 import { Input } from "@/components/ui/input"
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks"
+import { changeState } from "@/redux/features/client/clientStateSlice"
+
 
 const formSchema = z.object({
     title: z.string(),
@@ -38,6 +41,10 @@ const formSchema = z.object({
 
 
 const ClientForm = () => {
+
+    const isActive = useAppSelector((state) => state.clientState.value);
+    const dispatch = useAppDispatch();
+
 
     const form =  useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -62,7 +69,7 @@ const ClientForm = () => {
     }
 
     return (
-        <div className=" rounded-xl">
+        <div className=" rounded-xl ">
             <div className=" bg-[#7433FF] rounded-t-xl p-4 primary-bg w-full flex items-center gap-6">
                 <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M18.3424 11.366L6.70825 23.0001L18.3424 34.6343" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
@@ -226,7 +233,7 @@ const ClientForm = () => {
                     )}
                     />
                     <div className="flex items-center gap-4 w-full justify-end">
-                        <Button className='rounded-[0.3rem]' variant={"outline"} type="button">Cancel</Button>
+                        <Button onClick={()=>dispatch(changeState())} className='rounded-[0.3rem]' variant={"outline"} type="button">Cancel</Button>
                         <Button className="rounded-[0.3rem] bg-violet-600"  type="submit">Save</Button>
                     </div>
                 </form>

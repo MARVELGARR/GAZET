@@ -2,14 +2,18 @@
 import ClientForm from "@/components/MarvelComponents/clientCreation/clientCreationForm";
 import Header1 from "@/components/MarvelComponents/headerComponent/header1";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import { changeState } from "@/redux/features/client/clientStateSlice";
 import { DataTable } from "./data-table";
 
 import { columns } from "./columns";
+import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks";
 
 
 
 const Client = () => {
+
+    const isActive = useAppSelector((state) => state.clientState.value);
+    const dispatch = useAppDispatch();
 
     const data = [
         {
@@ -45,7 +49,7 @@ const Client = () => {
                     <div className="flex items-center justify-between  w-full">
                         <h1 className=" text-2xl font-bold">Client</h1>
                         <div className="flex items-center gap-4">
-                            <Button className=" rounded-[0.4rem] bg-violet-600 flex items-center gap-4">
+                            <Button onClick={()=>dispatch(changeState())} className=" rounded-[0.4rem] bg-violet-600 flex items-center gap-4">
                                 <span className="">Add Client</span>
                                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M18.5 8.5H12.5V2.5C12.5 1.40667 11.5933 0.5 10.5 0.5C9.40667 0.5 8.5 1.40667 8.5 2.5V8.5H2.5C1.40667 8.5 0.5 9.40667 0.5 10.5C0.5 11.5933 1.40667 12.5 2.5 12.5H8.5V18.5C8.5 19.5933 9.40667 20.5 10.5 20.5C11.5933 20.5 12.5 19.5933 12.5 18.5V12.5H18.5C19.5933 12.5 20.5 11.5933 20.5 10.5C20.5 9.40667 19.5933 8.5 18.5 8.5Z" fill="white"/>
@@ -71,11 +75,15 @@ const Client = () => {
             </div>
 
 
-            <div className="hidden">
+            { isActive && (<div className=" absolute  z-10 filter backdrop-blur-sm">
                 <ClientForm/>
-            </div>
+            </div>)}
         </div>
     );
 }
 
 export default Client;
+
+function useSelector(state: any) {
+    throw new Error("Function not implemented.");
+}
