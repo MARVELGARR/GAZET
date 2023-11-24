@@ -44,7 +44,7 @@ export const tools = [
     }
 ]
 
-export const slider = [
+export const sliderData = [
     {
         desc: "Your  business imagination is our piority",
         name:"Ifeoluwapo Ruth",
