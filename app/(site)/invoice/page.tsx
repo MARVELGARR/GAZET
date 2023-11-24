@@ -1,8 +1,8 @@
-
-
 const Invoice = () => {
     return (
-        <div className=""></div>
+        <div className="">
+
+        </div>
     );
 }
  
