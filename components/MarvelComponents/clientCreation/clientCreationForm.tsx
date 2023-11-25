@@ -18,6 +18,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks"
 import { changeState } from "@/redux/features/client/clientStateSlice"
+import Image from "next/image"
 
 
 const formSchema = z.object({
@@ -69,13 +70,17 @@ const ClientForm = () => {
     }
 
     return (
-        <div className=" rounded-xl ">
+        <div className=" rounded-xl max-w-[40rem] overflow-x-auto">
             <div className=" bg-[#7433FF] rounded-t-xl p-4 primary-bg w-full flex items-center gap-6">
-                <svg width="46" height="46" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.3424 11.366L6.70825 23.0001L18.3424 34.6343" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M39.2914 23H7.03394" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <div className="">
+                <Image
+                    src='/svg/backArrow.svg'
+                    alt='go back'
+                    width={40}
+                    height={40}
+                    className='cursor-pointer'
+                    onClick={()=>dispatch(changeState())}
+                />
+                <div className="text-white">
                     <h1 className="">CLIENT</h1>
                     <p className=''>Please take time to setup your client account</p>
                 </div>

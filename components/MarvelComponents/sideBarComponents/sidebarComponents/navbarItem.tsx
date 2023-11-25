@@ -27,21 +27,16 @@ const NavBarItem: React.FC<NavBarItemProps>  = ({image, name, href, index}) => {
         else if(params == '/invoice'){
             setState(2)
         }
-        else if(params == '/charts'){
-            setState(3)
-        }
         else if(params== '/payment'){
             setState(4)
         }
-        else if(params == '/reports'){
-            setState(5)
-        }
+
     },[params])
     
     const { handleSelect} = useSelect(state)
 
     return ( 
-        <Link href={href} className={` ${state == 0 && index == 0 ? 'text-white fill-white bg-violet-600' : state == 1 && index == 1 ? 'text-white fill-white bg-violet-600' : state == 2 && index == 2 ? 'text-white fill-white bg-violet-600' : state == 3 && index == 3 ? 'text-white fill-white bg-violet-600' : state == 4 && index == 4 ? 'text-white fill-white bg-violet-600' : state == 5 && index == 5 ? 'text-white fill-white bg-violet-600' : 'fill-violet-600 text-black' } flex hover:bg-violet-600 hover:text-white fill-violet-600  hover:fill-white items-center rounded-xl justify-between w-full px-[2.5rem] py-[1rem] `}>
+        <Link href={href} className={` ${state == 0 && index == 0 ? 'text-white fill-white bg-violet-600' : state == 1 && index == 1 ? 'text-white fill-white bg-violet-600' : state == 2 && index == 2 ? 'text-white fill-white bg-violet-600' : state == 3 && index == 3 ? 'text-white fill-white bg-violet-600' : state == 4 && index == 4 ? 'text-white fill-white bg-violet-600' : state == 5 && index == 5 ? 'text-white fill-white bg-violet-600' : 'fill-violet-600 text-black' } flex hover:bg-violet-600 hover:text-white fill-violet-600  hover:fill-white items-center lg:rounded-xl justify-between lg:w-[80%] rounded-full  px-[1.5rem] py-[0.5rem] `}>
             {
                 index == 0 &&(
                     <svg className={` ${state == 0 ? 'fill-white text-white ': ''}`} width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -91,18 +86,8 @@ const NavBarItem: React.FC<NavBarItemProps>  = ({image, name, href, index}) => {
 
                 )
             }
-            {
-
-            
-                index === 5 && (
-                    <svg className={``} width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M22 12.62V14.68C22 15.24 21.54 15.7 20.97 15.7H19.04C17.96 15.7 16.97 14.91 16.88 13.83C16.82 13.2 17.06 12.61 17.48 12.2C17.85 11.82 18.36 11.6 18.92 11.6H20.97C21.54 11.6 22 12.06 22 12.62Z" fill=""/>
-                        <path d="M15.38 13.96C15.29 12.91 15.67 11.88 16.43 11.13C17.07 10.48 17.96 10.1 18.92 10.1H19.49C19.77 10.1 20 9.87002 19.96 9.59002C19.69 7.65002 18.01 6.15002 16 6.15002H6C3.79 6.15002 2 7.94002 2 10.15V17.15C2 19.36 3.79 21.15 6 21.15H16C18.02 21.15 19.69 19.65 19.96 17.71C20 17.43 19.77 17.2 19.49 17.2H19.04C17.14 17.2 15.54 15.78 15.38 13.96ZM13 11.9H7C6.59 11.9 6.25 11.57 6.25 11.15C6.25 10.73 6.59 10.4 7 10.4H13C13.41 10.4 13.75 10.74 13.75 11.15C13.75 11.56 13.41 11.9 13 11.9Z" fill=""/>
-                        <path d="M14.21 3.97998C14.47 4.24998 14.24 4.64998 13.86 4.64998H6.03003C4.94003 4.64998 3.92003 4.96998 3.07003 5.51998C2.68003 5.76998 2.15003 5.49998 2.34003 5.06998C2.90003 3.75998 4.21003 2.84998 5.72003 2.84998H11.34C12.5 2.84998 13.53 3.25998 14.21 3.97998Z" fill=""/>
-                    </svg>
-                )
-            }
-            <span className={``}>{name}</span>
+         
+            <span className={`hidden lg:flex`}>{name}</span>
         </Link>
     );
 }

@@ -18,17 +18,16 @@ import { Checkbox } from "@/components/ui/checkbox"
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 export interface client {
-    id: string,
-    title: string,
-    firstname: string,
-    companyname: string,
-    clientemail: string,
-    phone:string,
-    address: string,
-    currency: string,
-    type:string;
-    status: string;
-    time: string
+  id: string,
+  title: string,
+  firstname: string,
+  companyname: string,
+  address: string,
+  phone:string,
+  clientemail: string,
+  currency: string,
+  status: string;
+  time: string;
 }
 
 export const columns: ColumnDef<client>[] = [
@@ -59,12 +58,8 @@ export const columns: ColumnDef<client>[] = [
         header: "FirstName",
     },
     {
-        accessorKey: "businessType",
-        header: "Business",
-    },
-    {
-        accessorKey: "email",
-        header: ({ column }) => {
+      accessorKey: "clientemail",
+      header: ({ column }) => {
           return (
             <Button
               variant="ghost"
@@ -76,17 +71,18 @@ export const columns: ColumnDef<client>[] = [
           )
         },
       },
-    {
+      {
         accessorKey: "phone",
         header: "Phone No",
     },
     {
         accessorKey: "time",
         header: "Time",
-    },
-    {
+      },
+      {
         accessorKey: "status",
         header: "Status",
+      
     },
     {
         id: "actions",
@@ -99,20 +95,20 @@ export const columns: ColumnDef<client>[] = [
                 <DropdownMenu >
                     <DropdownMenuTrigger asChild>
                         <Button  className="h-8 w-8 p-0">
-                            <span className="sr-only">Open menu</span>
-                            <MoreHorizontal className="h-4 w-4" />
+                          <span className="sr-only">Open menu</span>
+                          <MoreHorizontal className=" rotate-90 h-4 w-4" />
                         </Button>
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="end">
-                            <DropdownMenuLabel>Actions</DropdownMenuLabel>
-                                <DropdownMenuItem
-                                    onClick={() => navigator.clipboard.writeText(client.id)}
-                                    >
-                                    Copy ID
-                                </DropdownMenuItem>
-                                <DropdownMenuSeparator />
-                                <DropdownMenuItem>View customer</DropdownMenuItem>
-                            <DropdownMenuItem>View invoice details</DropdownMenuItem>
+                    <DropdownMenuContent className=" bg-white" align="end">
+                      <DropdownMenuLabel>Actions</DropdownMenuLabel>
+                      <DropdownMenuItem
+                        onClick={() => navigator.clipboard.writeText(client.id)}
+                        >
+                        Copy ID
+                      </DropdownMenuItem>
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem>View customer</DropdownMenuItem>
+                      <DropdownMenuItem>View invoice details</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </div>
