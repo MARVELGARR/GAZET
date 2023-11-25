@@ -76,7 +76,7 @@ const Invoice = () => {
                 searchPlaceholder="Search products..."
             />
             <div className='container'>
-                <Table className='h-screen'>
+                <Table>
                     <TableCaption>A list of your recent invoices.</TableCaption>
                     <TableHeader>
                         <TableRow>

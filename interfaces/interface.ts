@@ -36,3 +36,8 @@ export interface Client{
     currency: string,
     type:string;
 }
+
+export interface SearchFilterInputProps {
+    onSearch?: (event: ChangeEvent<HTMLInputElement>) => void;
+    searchPlaceholder?: string;
+  }

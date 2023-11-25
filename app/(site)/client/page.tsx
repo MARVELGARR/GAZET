@@ -42,8 +42,6 @@ const Client = () => {
     return (
         <div className="flex gap-[5rem]  flex-col w-full h-full">
             <Header1/>
-
-
             <div className=" h-full bg-white rounded-xl">
                 <div className="flex flex-col items-center py-6 px-8 gap-8">
                     <div className="flex items-center justify-between  w-full">
