@@ -2,7 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { CalendarIcon, CaretSortIcon, CheckIcon } from "@radix-ui/react-icons";
-import { format } from "date-fns";
+import format from "date-fns/format";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button"
@@ -84,7 +84,7 @@ const languages = [
 
 interface CancelProps {
     onClose: () => void;
-  }
+}
 
 const ClientForm = ({ onClose } : CancelProps) => {
 
@@ -120,10 +120,10 @@ const ClientForm = ({ onClose } : CancelProps) => {
         <div className=" rounded-xl w-[50%] mt-10">
             <div className=" bg-[#7433FF] rounded-t-xl p-4 primary-bg w-full px-5 flex items-center gap-6">
                 <Button onClick={onClose}>
-                <svg width="35" height="35" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M18.3424 11.366L6.70825 23.0001L18.3424 34.6343" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M39.2914 23H7.03394" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+                    <svg width="35" height="35" viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M18.3424 11.366L6.70825 23.0001L18.3424 34.6343" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M39.2914 23H7.03394" stroke="white" stroke-width="2.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
                 </Button>
                 <div className="">
                     <h1 className="text-white text-bold text-lg">NEW INVOICE</h1>
@@ -242,7 +242,7 @@ const ClientForm = ({ onClose } : CancelProps) => {
                                                     mode="single"
                                                     selected={field.value}
                                                     onSelect={field.onChange}
-                                                    disabled={(date) =>
+                                                    disabled={(date: any) =>
                                                         date > new Date() || date < new Date("1900-01-01")
                                                     }
                                                     initialFocus
@@ -285,7 +285,7 @@ const ClientForm = ({ onClose } : CancelProps) => {
                                                     mode="single"
                                                     selected={field.value}
                                                     onSelect={field.onChange}
-                                                    disabled={(date) =>
+                                                    disabled={(date: any) =>
                                                         date > new Date() || date < new Date("1900-01-01")
                                                     }
                                                     initialFocus

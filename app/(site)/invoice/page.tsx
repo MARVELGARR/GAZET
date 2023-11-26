@@ -82,14 +82,14 @@ const Invoice = () => {
     };
 
     return (
-        <div className="w-full bg-[#E6EAEE] absolute right-0 top-0 z-10 px-4 sm:px-10">
+        <div className=" bg-[#E6EAEE] w-[80%] sm:px-10 ">
             <Header label='Add new' onClick={openPopup} />
             <Search
                 onSearch={handleSearch}
                 searchPlaceholder="Search products..."
             />
-            <div className='container'>
-                <Table className='h-screen'>
+            <div className='container '>
+                <Table className=' '>
                     <TableCaption>A list of your recent invoices.</TableCaption>
                     <TableHeader>
                         <TableRow>
@@ -111,9 +111,9 @@ const Invoice = () => {
                             <TableHead>DESCRIPTION</TableHead>
                         </TableRow>
                     </TableHeader>
-                    <TableBody className='bg-gray-300'>
+                    <TableBody className='bg-gray-300 '>
                         {data.map((invoice) => (
-                            <TableRow key={invoice.invoice}>
+                            <TableRow className='' key={invoice.invoice}>
                                 <TableCell><Checkbox /></TableCell>
                                 <TableCell className="font-medium">{invoice.invoice}</TableCell>
                                 <TableCell>{invoice.paymentStatus}</TableCell>
