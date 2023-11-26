@@ -20,6 +20,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks"
 import { changeState } from "@/redux/features/client/clientStateSlice"
 import Image from "next/image"
+import { clientDataProps } from '../../../redux/features/client/clientDataSlice';
 
 
 const formSchema = z.object({
