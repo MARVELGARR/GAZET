@@ -2,6 +2,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import { sendData } from "@/redux/features/client/clientDataSlice"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -63,9 +64,9 @@ const ClientForm = () => {
         }
     })  
 
+
     function onSubmit(values: z.infer<typeof formSchema>) {
-        // Do something with the form values.
-        // ✅ This will be type-safe and validated.
+        dispatch(sendData(values))
         console.log(values)
     }
 
