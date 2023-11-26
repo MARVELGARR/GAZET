@@ -36,3 +36,13 @@ export interface Client{
     currency: string,
     type:string;
 }
+
+export interface SearchFilterInputProps {
+    onSearch?: any;
+    searchPlaceholder?: string;
+  }
+
+  export interface AddBtnProps {
+    label: string;
+    onClick: () => void;
+  }

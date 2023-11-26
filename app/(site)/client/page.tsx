@@ -8,6 +8,7 @@ import { DataTable } from "./data-table";
 import { columns } from "./columns";
 import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks";
 import Image from "next/image";
+import { useEffect } from "react";
 
 
 
@@ -15,28 +16,12 @@ const Client = () => {
 
     const isActive = useAppSelector((state) => state.clientState.value);
     const dispatch = useAppDispatch();
-
-    const data = [
-        {
-            id: '1',
-          firstname: 'marvellous',
-          business: "business",
-          status: "pending",
-          clientemail: "marvellousobatale@example.com",
-          phone: "09000000000",
-          title: "Mr",
-          companyname: "Gazet",
-          address: "Abuja, Lagos, Nigeria",
-          currency: "USD",
-          time: new Date().toLocaleString('en-US', {
-            hour: 'numeric',
-            minute: 'numeric',
-
-            hour12: true, // You can set this to false if you want 24-hour format
-          })
-        },
-        // ...
-    ]
+    
+    const data = useAppSelector((state) => state.clientData);
+    
+    useEffect(()=>{
+        console.log(data)
+    },[data])
 
 
     return (
@@ -45,7 +30,7 @@ const Client = () => {
             <Header1/>
 
 
-            <div className=" h-full bg-white rounded-xl overflow-x-auto mb-2">
+            <div className=" h-full bg-white rounded-xl">
                 <div className="flex flex-col items-center py-6 px-8 gap-8">
                     <div className="flex items-center justify-between  w-full">
                         <h1 className=" text-2xl font-bold text-violet-600">Client</h1>

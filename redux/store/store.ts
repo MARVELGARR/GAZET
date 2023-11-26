@@ -2,11 +2,13 @@ import { configureStore } from '@reduxjs/toolkit'
 
 import clientStateReducer from '../features/client/clientStateSlice'
 import navReducer from '../features/nav/navSlice'
+import clientDataReducer from '../features/client/clientDataSlice'
 
 export const store = configureStore({
   reducer: {
     navState: navReducer,
     clientState: clientStateReducer,
+    clientData: clientDataReducer,
   },
 })
 
