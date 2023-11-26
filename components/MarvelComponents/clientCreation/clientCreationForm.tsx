@@ -20,7 +20,6 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { useAppDispatch, useAppSelector } from "@/redux/redux-hooks/hooks"
 import { changeState } from "@/redux/features/client/clientStateSlice"
 import Image from "next/image"
-import { clientDataProps } from '../../../redux/features/client/clientDataSlice';
 
 
 const formSchema = z.object({
@@ -31,15 +30,17 @@ const formSchema = z.object({
     }).max(30,{
         message: 'must not exceed 30 characters'
     }),
-    othernames: z.string().optional(),
+    othernames: z.string(),
     companyname: z.string(),
     clientemail: z.string().email().toLowerCase(),
     phone: z.string().min(10, {
         message: 'must be more than 10 characters'
     }),
     address: z.string(),
-    currency: z.string()
-
+    currency: z.string(),
+    status: z.enum(["pending", "paid", "processing"]),
+    id: z.string(),
+    time: z.string(),
 })
 
 
@@ -60,14 +61,17 @@ const ClientForm = () => {
             phone:" ",
             address: " ",
             currency: "NG",
-            type:"Business"
+            type:"Business",
+            status: 'pending',
+            id: '',
+            time: new Date().toISOString(),
 
         }
     })  
 
 
     function onSubmit(values: z.infer<typeof formSchema>) {
-        dispatch(sendData(values))
+        dispatch(sendData([values]))
         console.log(values)
     }
 

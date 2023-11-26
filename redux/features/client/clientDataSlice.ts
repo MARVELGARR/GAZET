@@ -19,7 +19,7 @@ const initialState: clientDataProps[] = [];
 
 export const clientDataSlice = createSlice({
     name: 'clientData',
-    initialState,
+    initialState: [],
     reducers: {
         sendData: (state, action: PayloadAction<clientDataProps[]>) => {
             return state.concat(action.payload); // Replace the entire state with the payload
