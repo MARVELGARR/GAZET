@@ -1,13 +1,17 @@
 import Image from "next/image";
 
+
+
+
+
 const Logo = () => {
-    return ( 
-        <Image 
+    return (
+        <Image
             src='/svg/logo.svg'
             alt='logo'
-            height={120}
-            width={120}
-            className=" hidden md:flex"
+            width='120'
+            height='120'
+            className=''
         />
     );
 }

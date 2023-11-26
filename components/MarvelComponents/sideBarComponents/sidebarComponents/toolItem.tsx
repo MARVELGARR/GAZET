@@ -5,7 +5,7 @@ import type { ToolsItemProps } from "@/interfaces/interface";
 
 const ToolsItem: React.FC<ToolsItemProps> = ({name, index}) => {
     return (
-        <Button  variant={"Navlink"} className='flex fill-violet-600  hover:fill-white items-center rounded-xl justify-between w-full px-[2.5rem] py-[1.7rem]'>
+        <Button  variant={"Navlink"} className='flex fill-violet-600 w-full hover:fill-white items-center rounded-xl justify-between px-[4rem] lg:px-[2.5rem] py-[1.7rem]'>
             {
                 index ==0 && (
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="" xmlns="http://www.w3.org/2000/svg">
@@ -23,7 +23,7 @@ const ToolsItem: React.FC<ToolsItemProps> = ({name, index}) => {
 
                 )
             }
-            <span className=" ">{name}</span>
+            <span className=" lg:flex hidden">{name}</span>
         </Button>
     );
 }

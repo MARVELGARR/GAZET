@@ -1,3 +1,4 @@
+
 import ReduxProvider from '@/redux/redux-provider/Provider'
 import type { Metadata } from 'next'
 
@@ -14,10 +15,12 @@ export default function Layout({
   return (
     <ReduxProvider>
 
-      <div className="h-screen w-full bg-gray-200 flex justify-center items-center">
+      <div className="h-full w-full">
+
         {children}
       </div>
     </ReduxProvider>
+
 
   )
 }

@@ -17,20 +17,10 @@ export const desktopNavData = [
         images:"/svg/invoice.svg"
     },
     {
-        name: 'Charts',
-        href: '/charts',
-        images:"/svg/chart.svg"
-    },
-    {
-        name: 'Payment',
+        name: 'payment',
         href: '/payment',
         images:"/svg/payment.svg"
     },
-    {
-        name: 'Report',
-        href: '/reports',
-        images:"/svg/report.svg"
-    }
 ]
 
 export const tools = [
@@ -66,3 +56,4 @@ export const sliderData = [
         role:"Product Designer - Payment, Gazet",
     }
 ]
+

@@ -5,7 +5,7 @@ import NavbarItem from "./navbarItem";
 
 const DesktopNav = () => {
     return (
-        <div className="flex flex-col w-full  items-center  ">
+        <div className="flex flex-col w-full gap-4 items-center  ">
             {desktopNavData.map((item, index) => (
                 <NavbarItem
                     key={index}
