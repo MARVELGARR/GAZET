@@ -18,4 +18,4 @@ const DesktopSidebar: React.FC = () => {
      );
 }
  
-export default DesktopSidebar ;
+export default DesktopSidebar;

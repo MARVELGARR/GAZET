@@ -44,7 +44,7 @@ const Client = () => {
             <Header1/>
 
 
-            <div className=" h-full bg-white rounded-xl overflow-x-auto mb-2">
+            <div className=" h-full bg-white rounded-xl">
                 <div className="flex flex-col items-center py-6 px-8 gap-8">
                     <div className="flex items-center justify-between  w-full">
                         <h1 className=" text-2xl font-bold text-violet-600">Client</h1>

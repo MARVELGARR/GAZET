@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import Header from '@/components/invoiceComponents/Header';
 import Search from '@/components/invoiceComponents/SearchBar';
 import {
@@ -14,24 +14,11 @@ import {
 import { Button } from '@/components/ui/button';
 import { Checkbox } from "@/components/ui/checkbox"
 import { MoreHorizontal } from 'lucide-react';
-import InvoiceForm from '@/components/invoiceComponents/InvoiceForm';
 
 
 
 
 const Invoice = () => {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-    const openPopup = () => {
-        setIsPopupOpen(true);
-        // document.body.style.overflowY = "hidden";
-    };
-
-    const closePopup = () => {
-        setIsPopupOpen(false);
-        // document.body.style.overflowY = "scroll";
-    };
-
     const data = [
         {
             invoice: "INV001",
@@ -83,13 +70,13 @@ const Invoice = () => {
 
     return (
         <div className="w-full bg-[#E6EAEE] absolute right-0 top-0 z-10 px-4 sm:px-10">
-            <Header label='Add new' onClick={openPopup} />
+            <Header />
             <Search
                 onSearch={handleSearch}
                 searchPlaceholder="Search products..."
             />
             <div className='container'>
-                <Table className='h-screen'>
+                <Table>
                     <TableCaption>A list of your recent invoices.</TableCaption>
                     <TableHeader>
                         <TableRow>
@@ -102,7 +89,7 @@ const Invoice = () => {
                             <TableHead className='pointer-cursor'><Button>Overdue Invoice(0)</Button></TableHead>
                         </TableRow>
                         <TableRow>
-                            <TableHead><Checkbox /></TableHead>
+                            <TableHead><Checkbox/></TableHead>
                             <TableHead>DATE</TableHead>
                             <TableHead>CLIENT NAME</TableHead>
                             <TableHead>INVOICE NUMBER</TableHead>
@@ -123,19 +110,11 @@ const Invoice = () => {
                                 <TableCell className="text-left">
                                     {invoice.totalAmount}
                                 </TableCell>
-                                <TableCell><MoreHorizontal size={20} /></TableCell>
+                                <TableCell><MoreHorizontal size={20}/></TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
                 </Table>
-            </div>
-            <div>
-                <div>
-                </div>
-                {isPopupOpen && (
-                    <div className='w-full h-screen p-10 bg-white bg-opacity-50 backdrop-blur-sm flex flex-col justify-center items-center absolute z-20 top-0 left-0'>
-                        <InvoiceForm onClose={closePopup} />
-                    </div>)}
             </div>
         </div>
     );

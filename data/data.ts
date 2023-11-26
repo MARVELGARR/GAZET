@@ -7,12 +7,12 @@ export const desktopNavData = [
         images:"/svg/home.svg"
     },
     {
-        name: 'client',
+        name: 'Client',
         href: '/client',
         images:"/svg/client.svg"
     },
     {
-        name: 'invoice',
+        name: 'Invoice',
         href: '/invoice',
         images:"/svg/invoice.svg"
     },
@@ -25,11 +25,11 @@ export const desktopNavData = [
 
 export const tools = [
     {
-        name: 'logout',
+        name: 'Logout',
         icon: '/svg/logout.svg'
     },
     {
-        name: 'setting',
+        name: 'Setting',
         icon: '/svg/settings.svg'
     }
 ]
