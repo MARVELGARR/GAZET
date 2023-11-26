@@ -38,6 +38,11 @@ export interface Client{
 }
 
 export interface SearchFilterInputProps {
-    onSearch?: (event: ChangeEvent<HTMLInputElement>) => void;
+    onSearch?: any;
     searchPlaceholder?: string;
+  }
+
+  export interface AddBtnProps {
+    label: string;
+    onClick: () => void;
   }
