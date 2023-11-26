@@ -41,6 +41,7 @@ const Client = () => {
 
     return (
         <div className="flex gap-[4rem]  flex-col w-full h-full">
+            <title>client</title>
             <Header1/>
 
 

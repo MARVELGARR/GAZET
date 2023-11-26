@@ -2,7 +2,7 @@ import ReduxProvider from '@/redux/redux-provider/Provider'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'sign up',
   description: '',
 }
 
