@@ -19,13 +19,14 @@ const initialState: clientDataProps[] = [];
 
 export const clientDataSlice = createSlice({
     name: 'clientData',
-    initialState: [],
+    initialState: [] as clientDataProps[], // Explicitly set the initial state type
     reducers: {
         sendData: (state, action: PayloadAction<clientDataProps[]>) => {
-            return state.concat(action.payload); // Replace the entire state with the payload
+            return [...state, ...action.payload]; // Use spread operator to merge arrays
         },
     },
 });
+
 
 
 export const { sendData } = clientDataSlice.actions;

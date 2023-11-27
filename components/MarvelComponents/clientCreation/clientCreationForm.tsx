@@ -64,7 +64,7 @@ const ClientForm = () => {
             type:"Business",
             status: 'pending',
             id: '',
-            time: new Date().toISOString(),
+            time: new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
 
         }
     })  
