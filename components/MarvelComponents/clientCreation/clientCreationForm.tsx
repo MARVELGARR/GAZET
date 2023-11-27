@@ -3,6 +3,8 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
 import { sendData } from "@/redux/features/client/clientDataSlice"
+import { v4 as uuidv4 } from 'uuid';
+
 
 import { Button } from "@/components/ui/button"
 import {
@@ -45,6 +47,7 @@ const formSchema = z.object({
 
 
 const ClientForm = () => {
+    const clientId = uuidv4();
 
     const isActive = useAppSelector((state) => state.clientState.value);
     const dispatch = useAppDispatch();
@@ -54,16 +57,16 @@ const ClientForm = () => {
         resolver: zodResolver(formSchema),
         defaultValues:{
             title: "Mr.",
-            firstname: " ",
-            othernames: "",
-            companyname: "",
-            clientemail: "",
-            phone:" ",
-            address: " ",
+            firstname: "marvellous ",
+            othernames: "Osemudiamen Obatale",
+            companyname: " GAZET",
+            clientemail: " marvellousobatale@gmail.com",
+            phone:"08152795806",
+            address: " Ikorodu, Lagos, Nigeria",
             currency: "NG",
             type:"Business",
             status: 'pending',
-            id: '',
+            id: clientId,
             time: new Date().toLocaleString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })
 
         }
